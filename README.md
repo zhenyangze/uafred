@@ -5,13 +5,15 @@ afred on ubuntu(use electron)
 #　使用方法
 1. 进入　[下载地址](https://github.com/zhenyangze/uafred/tree/master/download)，选择自己的系统对应的版本下载．
 2. 创建快捷方式
-右上角系统设置->键盘->快捷键->自定义
+　右上角系统设置->键盘->快捷键->自定义
 3. 使用
 
 > * 使用快捷键打开程序
-> * Esc关闭程序
-> * Alt+数字执行对应的方法（有些会失效，比如有道翻译，因为没有对Alt做处理）
-> * Enter则执行第一个命令
+> * `Esc`关闭程序
+> * `Alt+数字`执行对应的方法（有些会失效，比如有道翻译，因为没有对Alt做处理）
+> * `Enter`则执行第一个命令
+> * 注意，在对应目录中，可执行文件是**UAfred**，命令行运行`./your/path/UAfred`进行测试
+> * 不要问为啥alfred改成了uafred,他们之间差了个lu而已
 
 #　主要功能
 ## 应用搜索
