@@ -18,6 +18,9 @@
         },
         "bd":{
             "path":"./script/baidu/baidu.sh"
+        },
+        "calc":{
+            "path":"./script/calc/calc.sh"
         }
     }
 }
