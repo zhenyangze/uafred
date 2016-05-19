@@ -1,0 +1,10 @@
+{
+    "name": "uafred",
+    "version": "1.0.0",
+    "main": "main.js",
+    "author":"zhenyangze@gmail.com",
+    "scripts": {
+        "start": "electron main.js"
+     }
+ 
+}
