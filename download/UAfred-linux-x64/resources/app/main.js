@@ -25,6 +25,7 @@ function createWindow () {
         show: false,
         autoHideMenuBar: true,
         transparent:true,
+        icon: path.join(__dirname, "./uafred.png")
     })
 
     let bounds = mainWindow.getBounds();

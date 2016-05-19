@@ -5,7 +5,7 @@
   "author": "zhenyangze@gmail.com",
   "scripts": {
     "start": "electron main.js",
-    "package": "electron-packager ./ UAfred --ignore=\"download\" --platform=linux --arch=all --out ./download --overwrite --icon=./uafred.ico"
+    "package": "electron-packager ./ UAfred --ignore=\"download\" --platform=linux --arch=all --icon=\"./uafred.png\" --out ./download --overwrite "
   },
   "devDependencies": {
     "electron-packager": "^7.0.2",
