@@ -21,7 +21,7 @@ if ('undefined' != typeof module){
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
-            <form class="navbar-form navbar-left w100 p0 m0">
+            <form class="navbar-form navbar-left w100 p0 m0" onsubmit="return false;">
                 <div class="form-group mt10 w100">
                     <input type="text" class="form-control input-lg" style="width:100%" id="searchName" placeholder="Search For:">
                 </div>
@@ -32,6 +32,9 @@ if ('undefined' != typeof module){
         </div>
     </body>
     <script>
+md5List = [];
+commandList = [];
+
 function sendIpcMsg(channel, args){
     try {
         const ipcRenderer = require('electron').ipcRenderer;
@@ -97,11 +100,11 @@ function search($keyWordArr){
 }
 //Html编码获取Html转义实体
 function htmlEncode(value){
-      return $('<div/>').text(value).html();
+    return $('<div/>').text(value).html();
 }
 //Html解码获取Html实体
 function htmlDecode(value){
-      return $('<div/>').html(value).text();
+    return $('<div/>').html(value).text();
 }
 function showResult(jsonStr, dataObj){
     var md5Str = $.md5(jsonStr);
@@ -117,12 +120,12 @@ function showResult(jsonStr, dataObj){
     }
 
     var name = dataObj.Name || '';
-        name = htmlEncode(name);
+    name = htmlEncode(name);
     var exec = dataObj.Exec || '';
-        commandList.push(exec);
-        exec = htmlEncode(exec);
+    commandList.push(exec);
+    exec = htmlEncode(exec);
     var comment = dataObj.Comment || '';
-        comment = htmlEncode(comment);
+    comment = htmlEncode(comment);
     var Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ exec + '">'
         + '<div class="media">'
         + '<span style="float:right;margin-top:12px;">Alt + ' + (index + 1) + '</span>'
@@ -155,7 +158,7 @@ $("#searchName").bind('input propertychange', function(){
 })
 function runCommend(index){
     var commend = $('[attr-index=' + index + ']').attr('attr-commend') || '';
-    commend = commandList[index-1];
+    commend = commandList[index-1] || '';
     if (commend.length > 1){
         sendIpcMsg('exec', commend);
     }
@@ -164,6 +167,9 @@ $("body").keyup(function(e){
     //关闭页面
     if (e.keyCode == 27){
         sendIpcMsg('window-close','')
+    } else if(e.keyCode == 13){
+        //回车
+        runCommend(1);
     } else if(e.altKey && e.keyCode >= 49){
         //alt
         var num = e.keyCode - 48;
