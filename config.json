@@ -19,6 +19,12 @@
         "bd":{
             "path":"./script/baidu/baidu.sh"
         },
+        "github":{
+            "path":"./script/github/github.sh"
+        },
+        ">":{
+            "path":"./script/shell/shell.sh"
+        },
         "calc":{
             "path":"./script/calc/calc.sh"
         }

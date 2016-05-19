@@ -61,6 +61,7 @@ function changeSize(){
 function search($keyWordArr){
     $searchArr = {};
     md5List = [];
+    commandList = [];
     if ($keyWordArr.length == 1){
         $searchArr = {
             'category': 'app',
@@ -94,7 +95,14 @@ function search($keyWordArr){
     changeSize();
     sendIpcMsg('search', $searchArr);
 }
-
+//Html编码获取Html转义实体
+function htmlEncode(value){
+      return $('<div/>').text(value).html();
+}
+//Html解码获取Html实体
+function htmlDecode(value){
+      return $('<div/>').html(value).text();
+}
 function showResult(jsonStr, dataObj){
     var md5Str = $.md5(jsonStr);
     if (md5List.indexOf(md5Str) >=0 ){
@@ -107,15 +115,23 @@ function showResult(jsonStr, dataObj){
     if (dataObj.Icon.length == 0){
         style = 'display:none;'
     }
-    var Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ (dataObj.Exec || '') + '">'
+
+    var name = dataObj.Name || '';
+        name = htmlEncode(name);
+    var exec = dataObj.Exec || '';
+        commandList.push(exec);
+        exec = htmlEncode(exec);
+    var comment = dataObj.Comment || '';
+        comment = htmlEncode(comment);
+    var Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ exec + '">'
         + '<div class="media">'
         + '<span style="float:right;margin-top:12px;">Alt + ' + (index + 1) + '</span>'
         + '<div class="media-left media-middle" style="' + style + '">'
         + '<img class="media-object" src="' + (dataObj.Icon || '') + '" width="48" height="48" alt="">'
         + '</div>'
         + '<div class="media-body">'
-        + '<h4 class="media-heading">' + (dataObj.Name || '') + '</h4>'
-        + '<p>' + (dataObj.Comment || '') + '</p>'
+        + '<h4 class="media-heading">' + name + '</h4>'
+        + '<p>' + comment + '</p>'
         + '</div>'
         + '</div>'
         + '</a>';
@@ -139,6 +155,7 @@ $("#searchName").bind('input propertychange', function(){
 })
 function runCommend(index){
     var commend = $('[attr-index=' + index + ']').attr('attr-commend') || '';
+    commend = commandList[index-1];
     if (commend.length > 1){
         sendIpcMsg('exec', commend);
     }
