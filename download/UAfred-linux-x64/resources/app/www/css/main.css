@@ -1,0 +1,41 @@
+body{
+    font-size:12px;
+    padding-top:46px;
+}
+nav form input{
+    overflow-y:hidden;
+}
+.navbar{
+    min-height:45px;
+    margin-bottom:0;
+    border:0;
+}
+.navbar .p0{
+    padding:0;
+}
+.navbar .m0{
+    margin:0;
+}
+.navbar .w100{
+    width:100%;
+}
+.mt10{
+    margin-bottom:10px;
+}
+.p1-15 {
+    padding:5px 15px;
+}
+.mb0{
+    margin-bottom:0;
+}
+.list-group{
+    max-height: 311px;
+    overflow-y:scroll;
+}
+.input-lg{
+    border-radius: 3px;
+    margin-top:-1px;
+}
+.form-control{
+    border:2px solid #ccc;
+}

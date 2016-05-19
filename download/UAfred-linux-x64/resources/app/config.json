@@ -1,0 +1,23 @@
+{
+    "title":"uafred",
+    "width":600,
+    "height":47,
+    "debug":false,
+    "category":{
+        "app":{
+            "path":"./script/app/app.sh"
+        },
+        "yd":{
+            "path":"./script/youdao/youdao.py"
+        },
+        "find":{
+            "path":"./script/find/find.py"
+        },
+        "cd":{
+            "path":"./script/cd/cd.sh"
+        },
+        "bd":{
+            "path":"./script/baidu/baidu.sh"
+        }
+    }
+}
