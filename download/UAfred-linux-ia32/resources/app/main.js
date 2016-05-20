@@ -109,10 +109,21 @@ ipcMain.on('search', function(event, arg){
 	try{
 		keyword = arg;
 		let category = arg.category;
-		let ExecShell = path.join(__dirname, config.category[category].path);
+        let ExecShell = '';
+
+        if (typeof config.category[category] == 'undefined'){
+            ExecShell = path.join(__dirname, config.category.app.path); 
+            arg.args.unshift(category);
+        } else {
+		    ExecShell = path.join(__dirname, config.category[category].path);
+        }
+        
 		let exists = fs.existsSync(ExecShell);
 		if (!exists){
 			ExecShell = path.join(__dirname, config.category.app.path);
+            if (category != 'app'){
+                arg.args.unshift(category);
+            }
 		}
 		let result = cp.spawn(ExecShell, arg.args);
 		result.stdout.on('data', function(data){

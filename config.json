@@ -5,28 +5,70 @@
     "icon":"./uafred.ico",
     "debug":false,
     "category":{
+        "?":{
+            "name":"help",
+            "icon":"./script/help/help.png",
+            "comment":"?",
+            "path":"./script/help/help.php"
+        },
+        "help":{
+            "name":"help",
+            "icon":"./script/help/help.png",
+            "comment":"help",
+            "path":"./script/help/help.php"
+        },
         "app":{
+            "name":"applications",
+            "icon":"./script/app/app.png",
+            "comment":"applicationName" ,
             "path":"./script/app/app.sh"
         },
         "yd":{
+            "name":"有道翻译",
+            "icon":"./script/youdao/youdao.png",
+            "comment":"yd word",
             "path":"./script/youdao/youdao.py"
         },
         "find":{
+            "name":"文件搜索",
+            "icon":"./script/find/find.png",
+            "comment":"find fileName",
             "path":"./script/find/find.py"
         },
         "cd":{
+            "name":"打开目录",
+            "icon":"./script/cd/cd.png",
+            "comment":"cd yourPath",
             "path":"./script/cd/cd.sh"
         },
         "bd":{
+            "name":"百度搜索",
+            "icon":"./script/baidu/baidu-icon.png",
+            "comment":"bd keyword",
             "path":"./script/baidu/baidu.sh"
         },
+        "bdfy":{
+            "name":"百度翻译",
+            "icon":"./script/baidu_fanyi/baidu_fanyi.png",
+            "comment":"bdfy keyword",
+            "path":"./script/baidu_fanyi/baidu_fanyi.php"
+        },
         "github":{
+            "name":"github搜索",
+            "icon":"./script/github/github-icon.png",
+            "comment":"github keyword",
             "path":"./script/github/github.sh"
         },
         ">":{
+            "name":"执行shell",
+            "icon":"./script/shell/shell-icon.png",
+            "comment":"> shutdown -h now",
             "path":"./script/shell/shell.sh"
         },
         "calc":{
+            "name":"数学计算",
+            "icon":"./script/calc/icon.png",
+            "comment":"calc ?",
             "path":"./script/calc/calc.sh"
         }
     }

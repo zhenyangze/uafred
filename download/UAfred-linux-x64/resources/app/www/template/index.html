@@ -65,17 +65,10 @@ function search($keyWordArr){
     $searchArr = {};
     md5List = [];
     commandList = [];
-    if ($keyWordArr.length == 1){
-        $searchArr = {
-            'category': 'app',
-            'args': $keyWordArr
-        }; 
-    } else {
-        $searchArr = {
-            'category': $keyWordArr.shift(),
-            'args': $keyWordArr
-        };              
-    }
+    $searchArr = {
+        'category': $keyWordArr.shift(),
+        'args': $keyWordArr
+    };              
     getIpcMsg('result', function(event, arg){
         //存在多个json组合的情况
         let jsonArr = arg.toString().split("\n");
