@@ -6,6 +6,7 @@ const fs = require('fs');
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const ipcMain = electron.ipcMain;
 let config = require('./config.json');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -62,7 +63,7 @@ function createWindow () {
 		// Dereference the window object, usually you would store windows
 		// in an array if your app supports multi windows, this is the time
 		// when you should delete the corresponding element.
-		mainWindow = null
+		mainWindow = null;
 	})
 	mainWindow.show();
 }
@@ -92,7 +93,6 @@ app.on('activate', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 //
-const ipcMain = require('electron').ipcMain;
 ipcMain.on('window-resize', function(event, arg){
 	let height = arg.height || mainWindow.getContentSize()['height'];
 	let width = config.width || arg.width || mainWindow.getContentSize()['width'];
