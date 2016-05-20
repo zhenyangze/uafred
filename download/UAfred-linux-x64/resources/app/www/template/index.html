@@ -166,6 +166,8 @@ function runCommend(index){
 $("body").keyup(function(e){
     //关闭页面
     if (e.keyCode == 27){
+        $('.list-group').html('');
+        $("#searchName").val('');
         sendIpcMsg('window-close','')
     } else if(e.keyCode == 13){
         //回车
@@ -182,6 +184,7 @@ $("input:text:visible:first").focus();
 $("#searchName").keyup(function(e){
     //关闭页面
     if (e.keyCode == 27){
+        $("#searcName").val();
         sendIpcMsg('window-close','')
     } else if(e.keyCode == 13){
         //回车
