@@ -160,6 +160,8 @@ function runCommend(index){
     var commend = $('[attr-index=' + index + ']').attr('attr-commend') || '';
     commend = commandList[index-1] || '';
     if (commend.length > 1){
+        $('.list-group').html('');
+        $("#searchName").val('');
         sendIpcMsg('exec', commend);
     }
 }
