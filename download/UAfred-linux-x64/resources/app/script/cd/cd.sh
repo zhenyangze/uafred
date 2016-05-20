@@ -4,10 +4,11 @@
 # mail: zhenyangze@gmail.com
 # Created Time: 2016年05月18日 星期三 17时03分24秒
 
-if [[ -z $1 ]];then
-    exit
+if [[ ! -z $1 ]];then
+    searchPath=$(echo $1 | sed  's/\~/'${HOME//\//\\\/}'/g')
+else
+    searchPath='/'
 fi
-searchPath=$(echo $1 | sed  's/\~/'${HOME//\//\\\/}'/g')
 
 if [[ ! -d $searchPath ]];then
     dir=${searchPath%/*}

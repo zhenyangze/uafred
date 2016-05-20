@@ -16,12 +16,16 @@ afred on ubuntu(use electron)
 > * 不要问为啥alfred改成了uafred,他们之间差了个lu而已
 
 #　主要功能
+## 帮助
+![应用搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/help.png)
 ## 应用搜索
 ![应用搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/app.png)
 ## 有道翻译
 ![有道翻译](https://github.com/zhenyangze/uafred/raw/master/screenshot/yd.png)
 ## 百度搜索
 ![百度搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/bd.png)
+## 百度翻译
+![百度翻译](https://github.com/zhenyangze/uafred/raw/master/screenshot/bdfy.png)
 ## github搜索
 ![github搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/github.png)
 ## 打开目录
