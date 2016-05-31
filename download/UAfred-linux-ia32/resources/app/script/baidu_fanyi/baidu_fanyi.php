@@ -5,7 +5,7 @@ if (empty($queryArr)){
     exit;
 }
 $queryStr = implode(' ', $queryArr);
-if (mb_strlen($queryStr, 'utf-8') == strlen($queryStr)){
+if (preg_match("/^[".chr(0xa1)."-".chr(0xff)."]+$/", $queryStr)) {
     $urlType = 'from=en&to=zh';
 } else {
     $urlType = 'from=zh&to=en';
