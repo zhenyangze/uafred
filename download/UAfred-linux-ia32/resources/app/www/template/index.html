@@ -148,7 +148,12 @@ $("#searchName").bind('input propertychange', function(){
         return;
     }
     search(keyArr);
+}).blur(function(){
+    $('.list-group').html('');
+    $("#searchName").val('');
+    sendIpcMsg('window-close','')
 })
+
 function runCommend(index){
     var commend = $('[attr-index=' + index + ']').attr('attr-commend') || '';
     commend = commandList[index-1] || '';
