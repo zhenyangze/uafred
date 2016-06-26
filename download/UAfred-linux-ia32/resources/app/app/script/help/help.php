@@ -5,7 +5,7 @@ $configArr = json_decode($configText, true);
 foreach((array)$configArr['category'] as $category){
     $showInfo = array(
         'Name' => $category['name'],
-        'Icon' => dirname(__FILE__) . '/../../' . $category['icon'],
+        'Icon' => '../../' . $category['icon'],
         'Exec' => '',
         'Comment' => $category['comment']
     );

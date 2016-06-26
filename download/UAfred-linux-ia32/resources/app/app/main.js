@@ -7,36 +7,23 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain;
-
-let extend=function(o,n,override){
-    for(let p in n)if(n.hasOwnProperty(p) && (!o.hasOwnProperty(p) || override))o[p]=n[p];
-};
+const ToolLib = require(__dirname + '/lib/tool.js');
+let toolLib = new ToolLib();
 
 let config = require(__dirname + '/config.json');
+config.baseDir = __dirname;
 //set category
 if (config.plugin) {
     let pluginPath = path.join(__dirname, config.plugin)
-    reloadConfig(pluginPath, config);
+    toolLib.reloadConfig(pluginPath, config);
     fs.writeFile(__dirname + '/config.json', JSON.stringify(config, null, 4))
-    //save config
-    /*
-       config.category.sort(function(x, y){
-       console.log(x)
-       return x.index > y.index ? 1:-1;
-       });
-       */
 }
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 let keyword
 
-//a Single Instance Application
 const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
     if (mainWindow) {
-        //mainWindow.reload();
-        //if (mainWindow.isMinimized()) mainWindow.restore();
         if (!mainWindow.isVisible()) mainWindow.show();
         mainWindow.setContentSize(config.width, config.height, true);
     }
@@ -175,27 +162,4 @@ ipcMain.on('exec', function(event, arg){
 function window_close(){
     //mainWindow.minimize();
     mainWindow.hide();
-}
-
-function reloadConfig(filePath, configInfo){
-    let dirList = fs.readdirSync(filePath);
-
-    dirList.forEach(function(item){
-        if(item == configInfo.config && fs.statSync(filePath + '/' + item).isFile()){
-            pluginConfig = require(path.join(filePath ,item));
-            //modify path
-            for (var i in pluginConfig){
-                pluginConfig[i].path = path.join(filePath, pluginConfig[i].path);
-                let relativePath = path.relative(__dirname, filePath);
-                pluginConfig[i].icon = path.join("./", relativePath, pluginConfig[i].icon);
-            }
-            extend(configInfo.category, pluginConfig);
-            //configInfo.category.push(pluginConfig);
-        }
-
-        if(fs.statSync(filePath + '/' + item).isDirectory()){
-            reloadConfig(filePath + '/' + item, configInfo);
-        }
-
-    });
 }
