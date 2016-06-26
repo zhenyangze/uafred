@@ -1,0 +1,8 @@
+{
+    "cd":{
+        "name":"打开目录",
+        "icon":"./cd.png",
+        "comment":"cd yourPath",
+        "path":"./cd.sh"
+    } 
+}

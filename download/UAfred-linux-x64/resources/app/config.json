@@ -1,75 +1,79 @@
 {
-    "title":"uafred",
-    "width":600,
-    "height":47,
-    "icon":"./uafred.ico",
-    "debug":false,
-    "category":{
-        "?":{
-            "name":"help",
-            "icon":"./script/help/help.png",
-            "comment":"?",
-            "path":"./script/help/help.php"
+    "title": "uafred",
+    "width": 600,
+    "height": 47,
+    "icon": "./uafred.ico",
+    "debug": false,
+    "plugin": "./script",
+    "config": "config.json",
+    "category": {
+        "app": {
+            "name": "applications",
+            "icon": "script/app/app.png",
+            "comment": "applicationName",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/app/app.sh"
         },
-        "help":{
-            "name":"help",
-            "icon":"./script/help/help.png",
-            "comment":"help",
-            "path":"./script/help/help.php"
+        "bd": {
+            "name": "百度搜索",
+            "icon": "script/baidu/baidu-icon.png",
+            "comment": "bd keyword",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/baidu/baidu.sh"
         },
-        "app":{
-            "name":"applications",
-            "icon":"./script/app/app.png",
-            "comment":"applicationName" ,
-            "path":"./script/app/app.sh"
+        "bdfy": {
+            "name": "百度翻译",
+            "icon": "script/baidu_fanyi/baidu_fanyi.png",
+            "comment": "bdfy keyword",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/baidu_fanyi/baidu_fanyi.php"
         },
-        "yd":{
-            "name":"有道翻译",
-            "icon":"./script/youdao/youdao.png",
-            "comment":"yd word",
-            "path":"./script/youdao/youdao.py"
+        "calc": {
+            "name": "数学计算",
+            "icon": "script/calc/icon.png",
+            "comment": "calc ?",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/calc/calc.sh"
         },
-        "find":{
-            "name":"文件搜索",
-            "icon":"./script/find/find.png",
-            "comment":"find fileName",
-            "path":"./script/find/find.py"
+        "cd": {
+            "name": "打开目录",
+            "icon": "script/cd/cd.png",
+            "comment": "cd yourPath",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/cd/cd.sh"
         },
-        "cd":{
-            "name":"打开目录",
-            "icon":"./script/cd/cd.png",
-            "comment":"cd yourPath",
-            "path":"./script/cd/cd.sh"
+        "find": {
+            "name": "文件搜索",
+            "icon": "script/find/find.png",
+            "comment": "find fileName",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/find/find.py"
         },
-        "bd":{
-            "name":"百度搜索",
-            "icon":"./script/baidu/baidu-icon.png",
-            "comment":"bd keyword",
-            "path":"./script/baidu/baidu.sh"
+        "github": {
+            "name": "github搜索",
+            "icon": "script/github/github-icon.png",
+            "comment": "github keyword",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/github/github.sh"
         },
-        "bdfy":{
-            "name":"百度翻译",
-            "icon":"./script/baidu_fanyi/baidu_fanyi.png",
-            "comment":"bdfy keyword",
-            "path":"./script/baidu_fanyi/baidu_fanyi.php"
+        "?": {
+            "index": -99,
+            "name": "help",
+            "icon": "script/help/help.png",
+            "comment": "?",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/help/help.php"
         },
-        "github":{
-            "name":"github搜索",
-            "icon":"./script/github/github-icon.png",
-            "comment":"github keyword",
-            "path":"./script/github/github.sh"
+        "help": {
+            "index": -99,
+            "name": "help",
+            "icon": "script/help/help.png",
+            "comment": "help",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/help/help.php"
         },
-        ">":{
-            "name":"执行shell",
-            "icon":"./script/shell/shell-icon.png",
-            "comment":"> shutdown -h now",
-            "path":"./script/shell/shell.sh"
+        ">": {
+            "name": "执行shell",
+            "icon": "script/shell/shell-icon.png",
+            "comment": "> shutdown -h now",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/shell/shell.sh"
         },
-        "calc":{
-            "name":"数学计算",
-            "icon":"./script/calc/icon.png",
-            "comment":"calc ?",
-            "path":"./script/calc/calc.sh"
+        "yd": {
+            "name": "有道翻译",
+            "icon": "script/youdao/youdao.png",
+            "comment": "yd word",
+            "path": "/home/yangze/Documents/git/uafred/download/UAfred-linux-x64/resources/app/script/youdao/youdao.py"
         }
     }
 }

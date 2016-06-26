@@ -1,0 +1,8 @@
+{
+    ">":{
+        "name":"执行shell",
+        "icon":"./shell-icon.png",
+        "comment":"> shutdown -h now",
+        "path":"./shell.sh"
+    }
+}

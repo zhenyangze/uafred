@@ -1,0 +1,8 @@
+{
+    "bd":{
+        "name":"百度搜索",
+        "icon":"./baidu-icon.png",
+        "comment":"bd keyword",
+        "path":"./baidu.sh"
+    }
+}

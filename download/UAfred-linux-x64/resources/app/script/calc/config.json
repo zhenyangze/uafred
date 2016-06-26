@@ -1,0 +1,8 @@
+{
+    "calc":{
+        "name":"数学计算",
+        "icon":"./icon.png",
+        "comment":"calc ?",
+        "path":"./calc.sh"
+    }
+}

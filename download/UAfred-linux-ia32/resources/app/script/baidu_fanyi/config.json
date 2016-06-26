@@ -1,0 +1,8 @@
+{
+    "bdfy":{
+        "name":"百度翻译",
+        "icon":"./baidu_fanyi.png",
+        "comment":"bdfy keyword",
+        "path":"./baidu_fanyi.php"
+    }
+}

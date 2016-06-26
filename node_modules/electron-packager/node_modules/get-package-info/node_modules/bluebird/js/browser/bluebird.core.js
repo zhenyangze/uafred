@@ -23,7 +23,7 @@
  * 
  */
 /**
- * bluebird build version 3.4.0
+ * bluebird build version 3.4.1
  * Features enabled: core
  * Features disabled: race, call_get, generators, map, nodeify, promisify, props, reduce, settle, some, using, timers, filter, any, each
 */
@@ -2164,6 +2164,8 @@ Promise.prototype.all = function () {
 Promise.prototype.error = function (fn) {
     return this.caught(util.originatesFromRejection, fn);
 };
+
+Promise.getNewLibraryCopy = module.exports;
 
 Promise.is = function (val) {
     return val instanceof Promise;

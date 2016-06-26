@@ -1,0 +1,8 @@
+{
+    "github":{
+        "name":"github搜索",
+        "icon":"./github-icon.png",
+        "comment":"github keyword",
+        "path":"./github.sh"
+    }
+}

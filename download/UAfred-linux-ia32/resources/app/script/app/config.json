@@ -1,0 +1,9 @@
+{
+    "app":{
+        "name":"applications",
+        "icon":"./app.png",
+        "comment":"applicationName" ,
+        "path":"./app.sh"
+    }
+}
+
