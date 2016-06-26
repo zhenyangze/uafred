@@ -1,6 +1,8 @@
 # uafred
 afred on ubuntu(use electron)
-**ubuntu**上的**afred**
+**ubuntu**上的**afred** 
+
+如果你是开发者，点击查看**[如何制作插件](https://github.com/zhenyangze/uafred/blob/master/README_DEV.md)**
 
 使用方法
 ----
@@ -13,7 +15,7 @@ afred on ubuntu(use electron)
   * `Alt+数字`执行对应的方法（有些会失效，比如有道翻译，因为没有对Alt做处理）
   * `Enter`则执行第一个命令
   * 注意，在对应目录中，可执行文件是**UAfred**，命令行运行`./your/path/UAfred`进行测试
-  * 不要问为啥alfred改成了uafred,他们之间差了个lu而已
+  * 不要问为啥alfred改成了uafred,他们之间少lu而已
 
 主要功能
 ----
