@@ -1,11 +1,11 @@
 {
   "name": "uafred",
   "version": "1.0.0",
-  "main": "main.js",
+  "main":"app/main.js",
   "author": "zhenyangze@gmail.com",
   "scripts": {
-    "start": "electron main.js",
-    "package": "electron-packager ./ UAfred --ignore=\"download\" --ignore=\"screenshot\" --ignore=\"cache\" --platform=linux --arch=all --icon=\"./uafred.png\" --out ./download --overwrite "
+    "start": "electron app/main.js",
+    "package": "electron-packager ./app UAfred --platform=linux --arch=all --icon=\"./app/uafred.png\" --out ./download --overwrite "
   },
   "devDependencies": {
     "electron-packager": "^7.0.2",
