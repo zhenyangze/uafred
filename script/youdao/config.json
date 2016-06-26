@@ -1,0 +1,8 @@
+{
+    "yd":{
+        "name":"有道翻译",
+        "icon":"./youdao.png",
+        "comment":"yd word",
+        "path":"./youdao.py"
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "find":{
+        "name":"文件搜索",
+        "icon":"./find.png",
+        "comment":"find fileName",
+        "path":"./find.py"
+    }
+} 

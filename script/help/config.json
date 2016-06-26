@@ -1,0 +1,16 @@
+{
+    "?":{
+        "index":-99,
+        "name":"help",
+        "icon":"./help.png",
+        "comment":"?",
+        "path":"./help.php"
+    },
+    "help":{
+        "index":-99,
+        "name":"help",
+        "icon":"./help.png",
+        "comment":"help",
+        "path":"./help.php"
+    }
+}
