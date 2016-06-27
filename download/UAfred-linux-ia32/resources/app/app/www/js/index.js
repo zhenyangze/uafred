@@ -85,25 +85,32 @@ function showResult(jsonStr, dataObj){
     exec = htmlEncode(exec);
     var comment = dataObj.Comment || '';
     comment = htmlEncode(comment);
-    var Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ exec + '">'
-    + '<div class="media">'
-    + '<span style="float:right;margin-top:12px;">Alt + ' + (index + 1) + '</span>'
-    + '<div class="media-left media-middle" style="' + style + '">'
-    + '<img class="media-object" src="' + (dataObj.Icon || '') + '" width="48" height="48" alt="">'
-    + '</div>'
-    + '<div class="media-body">'
-    + '<h4 class="media-heading">' + name + '</h4>'
-    + '<p>' + comment + '</p>'
-    + '</div>'
-    + '</div>'
-    + '</a>';
-
-    //$('.list-group').append(Html);
-    $(Html).appendTo($('.list-group'));
-    if ((index+1) % 4 == 0 && index > 0){
+    var pageType = dataObj.PageType || '';
+    var html = '';
+    if (pageType == 'single'){
+        html = htmlDecode(comment); 
+        $('.list-group').html(html);
         $('.list-group-item').show();
-        changeSize();
+    } else {
+        Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ exec + '">'
+            + '<div class="media">'
+            + '<span style="float:right;margin-top:12px;">Alt + ' + (index + 1) + '</span>'
+            + '<div class="media-left media-middle" style="' + style + '">'
+            + '<img class="media-object" src="' + (dataObj.Icon || '') + '" width="48" height="48" alt="">'
+            + '</div>'
+            + '<div class="media-body">'
+            + '<h4 class="media-heading">' + name + '</h4>'
+            + '<p>' + comment + '</p>'
+            + '</div>'
+            + '</div>'
+            + '</a>';
+        $(Html).appendTo($('.list-group'));
+        if ((index+1) % 4 == 0 && index > 0){
+            $('.list-group-item').show();
+            changeSize();
+        }
     }
+
 }
 
 $("#searchName").bind('input propertychange', function(){

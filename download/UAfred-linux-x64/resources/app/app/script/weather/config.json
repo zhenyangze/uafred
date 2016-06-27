@@ -1,0 +1,8 @@
+{
+    "weather":{
+        "name":"天气预报",
+        "icon":"./weather.png",
+        "comment":"",
+        "path":"./weather.sh"
+    } 
+}

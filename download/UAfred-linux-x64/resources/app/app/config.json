@@ -7,6 +7,5 @@
     "plugin": "./script",
     "config": "config.json",
     "category": {
-    },
-    "baseDir": "/home/zhenyangze/Documents/work/git/uafred/app"
+    }
 }
