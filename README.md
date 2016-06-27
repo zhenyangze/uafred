@@ -19,17 +19,17 @@ afred on ubuntu(use electron)
 
 ## 功能列表
 * [帮助](https://github.com/zhenyangze/uafred#帮助)
-* [应用搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#应用搜索)
-* [api搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#api搜索)
-* [有道翻译](https://github.com/zhenyangze/uafred/blob/master/README.md#有道翻译)
-* [百度搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#百度搜索)
+* [应用搜索](https://github.com/zhenyangze/uafred#应用搜索)
+* [api搜索](https://github.com/zhenyangze/uafred#api搜索)
+* [有道翻译](https://github.com/zhenyangze/uafred#有道翻译)
+* [百度搜索](https://github.com/zhenyangze/uafred#百度搜索)
 * [百度翻译](https://github.com/zhenyangze/uafred#百度翻译)
-* [github搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#github搜索)
-* [打开目录](https://github.com/zhenyangze/uafred/blob/master/README.md#打开目录)
-* [文件查找](https://github.com/zhenyangze/uafred/blob/master/README.md#文件查找)
-* [执行shell](https://github.com/zhenyangze/uafred/blob/master/README.md#执行shell)
-* [数学计算](https://github.com/zhenyangze/uafred/blob/master/README.md#数学计算)
-* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
+* [github搜索](https://github.com/zhenyangze/uafred#github搜索)
+* [打开目录](https://github.com/zhenyangze/uafred#打开目录)
+* [文件查找](https://github.com/zhenyangze/uafred#文件查找)
+* [执行shell](https://github.com/zhenyangze/uafred#执行shell)
+* [数学计算](https://github.com/zhenyangze/uafred#数学计算)
+* [天气](https://github.com/zhenyangze/uafred#天气)
 
 功能截图
 ----
