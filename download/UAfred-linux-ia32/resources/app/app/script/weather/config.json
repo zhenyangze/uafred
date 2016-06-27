@@ -2,7 +2,7 @@
     "weather":{
         "name":"天气预报",
         "icon":"./weather.png",
-        "comment":"",
+        "comment":"weather",
         "path":"./weather.sh"
     } 
 }
