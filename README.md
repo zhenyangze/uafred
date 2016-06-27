@@ -18,12 +18,12 @@ afred on ubuntu(use electron)
   * 不要问为啥alfred改成了uafred,他们之间少lu而已
 
 ## 功能列表
-* [帮助](https://github.com/zhenyangze/uafred/blob/master/README.md#帮助)
+* [帮助](https://github.com/zhenyangze/uafred#帮助)
 * [应用搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#应用搜索)
 * [api搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#api搜索)
 * [有道翻译](https://github.com/zhenyangze/uafred/blob/master/README.md#有道翻译)
 * [百度搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#百度搜索)
-* [百度翻译](https://github.com/zhenyangze/uafred/blob/master/README.md#百度翻译)
+* [百度翻译](https://github.com/zhenyangze/uafred#百度翻译)
 * [github搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#github搜索)
 * [打开目录](https://github.com/zhenyangze/uafred/blob/master/README.md#打开目录)
 * [文件查找](https://github.com/zhenyangze/uafred/blob/master/README.md#文件查找)
