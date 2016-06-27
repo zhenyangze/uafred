@@ -1,0 +1,8 @@
+{
+    "kill":{
+        "name":"结束进程",
+        "icon":"./kill.png",
+        "comment":"kill processName",
+        "path":"./kill.sh"
+    } 
+}
