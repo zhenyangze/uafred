@@ -17,12 +17,22 @@ afred on ubuntu(use electron)
   * 注意，在对应目录中，可执行文件是**UAfred**，命令行运行`./your/path/UAfred`进行测试
   * 不要问为啥alfred改成了uafred,他们之间少lu而已
 
-主要功能
-----
 ## 功能列表
+* [帮助](https://github.com/zhenyangze/uafred/blob/master/README.md#帮助)
+* [应用搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#应用搜索)
+* [api搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#api搜索)
+* [有道翻译](https://github.com/zhenyangze/uafred/blob/master/README.md#有道翻译)
+* [百度搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#百度搜索)
+* [百度翻译](https://github.com/zhenyangze/uafred/blob/master/README.md#百度翻译)
+* [github搜索](https://github.com/zhenyangze/uafred/blob/master/README.md#github搜索)
+* [打开目录](https://github.com/zhenyangze/uafred/blob/master/README.md#打开目录)
+* [文件查找](https://github.com/zhenyangze/uafred/blob/master/README.md#文件查找)
+* [执行shell](https://github.com/zhenyangze/uafred/blob/master/README.md#执行shell)
+* [数学计算](https://github.com/zhenyangze/uafred/blob/master/README.md#数学计算)
 * [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
-* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
-* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
+
+功能截图
+----
 ## 帮助
 ![帮助搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/help.png)
 ## 应用搜索
