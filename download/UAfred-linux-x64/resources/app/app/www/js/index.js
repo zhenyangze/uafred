@@ -149,7 +149,7 @@ $("body").keyup(function(e){
     //关闭页面
     if (e.keyCode == 27){
         //首先清空，再退出
-        if ($("#searchName").val('') == '') {
+        if ($("#searchName").val().length == 0) {
             $('.list-group').html('');
             sendIpcMsg('window-close','')
         } else {
