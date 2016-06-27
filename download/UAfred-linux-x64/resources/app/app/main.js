@@ -10,13 +10,24 @@ const ipcMain = electron.ipcMain;
 const ToolLib = require(__dirname + '/lib/tool.js');
 let toolLib = new ToolLib();
 
-let config = require(__dirname + '/config.json');
+let config = require(__dirname + '/config_default.json');
+let fileClose = false;
 config.baseDir = __dirname;
 //set category
 if (config.plugin) {
     let pluginPath = path.join(__dirname, config.plugin)
     toolLib.reloadConfig(pluginPath, config);
-    fs.writeFile(__dirname + '/config.json', JSON.stringify(config, null, 4))
+    function isEmptyObject(e) {  
+        var t;  
+        for (t in e)  
+            return true;  
+        return false
+    }  
+    if (isEmptyObject(config)) {
+        fileClose = true;
+        fs.writeFileSync(__dirname + '/config.json', JSON.stringify(config, null, 4));
+        fileClose = false;
+    }
 }
 
 let mainWindow

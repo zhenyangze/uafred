@@ -5,7 +5,6 @@ if (empty($argv[1])) {
     exit;
 }
 $url = $argv[1];
-file_put_contents(__DIR__ . '/1', $url, FILE_APPEND);
 $fileContent = curlGet($url);
 if (!strstr($fileContent, 'maincontent')) {
     exit;
