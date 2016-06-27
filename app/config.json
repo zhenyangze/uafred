@@ -6,5 +6,81 @@
     "debug": false,
     "plugin": "./script",
     "config": "config.json",
-    "category": {}
+    "category": {
+        "app": {
+            "name": "applications",
+            "icon": "script/app/app.png",
+            "comment": "applicationName",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/app/app.sh"
+        },
+        "bd": {
+            "name": "百度搜索",
+            "icon": "script/baidu/baidu-icon.png",
+            "comment": "bd keyword",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/baidu/baidu.sh"
+        },
+        "bdfy": {
+            "name": "百度翻译",
+            "icon": "script/baidu_fanyi/baidu_fanyi.png",
+            "comment": "bdfy keyword",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/baidu_fanyi/baidu_fanyi.php"
+        },
+        "calc": {
+            "name": "数学计算",
+            "icon": "script/calc/icon.png",
+            "comment": "calc ?",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/calc/calc.sh"
+        },
+        "cd": {
+            "name": "打开目录",
+            "icon": "script/cd/cd.png",
+            "comment": "cd yourPath",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/cd/cd.sh"
+        },
+        "find": {
+            "name": "文件搜索",
+            "icon": "script/find/find.png",
+            "comment": "find fileName",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/find/find.py"
+        },
+        "github": {
+            "name": "github搜索",
+            "icon": "script/github/github-icon.png",
+            "comment": "github keyword",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/github/github.sh"
+        },
+        "?": {
+            "index": -99,
+            "name": "help",
+            "icon": "script/help/help.png",
+            "comment": "?",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/help/help.php"
+        },
+        "help": {
+            "index": -99,
+            "name": "help",
+            "icon": "script/help/help.png",
+            "comment": "help",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/help/help.php"
+        },
+        ">": {
+            "name": "执行shell",
+            "icon": "script/shell/shell-icon.png",
+            "comment": "> shutdown -h now",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/shell/shell.sh"
+        },
+        "uafred": {
+            "name": "UAfred操作",
+            "icon": "script/uafred/uafred.png",
+            "comment": "uafred [exit]",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/uafred/uafred.sh"
+        },
+        "yd": {
+            "name": "有道翻译",
+            "icon": "script/youdao/youdao.png",
+            "comment": "yd word",
+            "path": "/home/zhenyangze/Documents/work/git/uafred/app/script/youdao/youdao.py"
+        }
+    },
+    "baseDir": "/home/zhenyangze/Documents/work/git/uafred/app"
 }

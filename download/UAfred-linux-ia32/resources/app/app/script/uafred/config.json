@@ -1,0 +1,8 @@
+{
+    "uafred":{
+        "name":"UAfred操作",
+        "icon":"./uafred.png",
+        "comment":"uafred [exit]",
+        "path":"./uafred.sh"
+    } 
+}
