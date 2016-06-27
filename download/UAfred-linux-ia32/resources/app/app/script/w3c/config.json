@@ -1,0 +1,8 @@
+{
+    "w3c":{
+        "name":"访问w3c页面",
+        "icon":"./w3c.jpg",
+        "comment":"w3c url",
+        "path":"./w3c.php"
+    } 
+}

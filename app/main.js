@@ -71,6 +71,9 @@ function createWindow () {
         // when you should delete the corresponding element.
         mainWindow = null;
     })
+    mainWindow.on('blur', function() {
+        window_close(); 
+    })
     mainWindow.show();
 }
 

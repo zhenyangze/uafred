@@ -84,14 +84,13 @@ function showResult(jsonStr, dataObj){
     commandList.push(exec);
     exec = htmlEncode(exec);
     var comment = dataObj.Comment || '';
-    comment = htmlEncode(comment);
     var pageType = dataObj.PageType || '';
     var html = '';
     if (pageType == 'single'){
-        html = htmlDecode(comment); 
-        $('.list-group').html(html);
+        $('.list-group').html(comment);
         $('.list-group-item').show();
     } else {
+        comment = htmlEncode(comment);
         Html = '<a href="javascript:;" style="display:none;" onclick="clickEvent(' + (index + 1) + ')" class="list-group-item p1-15" attr-index="' + (index+1) + '" attr-commend="'+ exec + '">'
             + '<div class="media">'
             + '<span style="float:right;margin-top:12px;">Alt + ' + (index + 1) + '</span>'
@@ -113,7 +112,7 @@ function showResult(jsonStr, dataObj){
 
 }
 
-$("#searchName").bind('input propertychange', function(){
+triggerSearch = function() {
     var keyWordStr = $("#searchName").val();
     var keyArr = keyWordStr.split(' ');
     keyArr = $.grep(keyArr, function(n, i){return n != ''});
@@ -121,27 +120,43 @@ $("#searchName").bind('input propertychange', function(){
         return;
     }
     search(keyArr);
-}).blur(function(){
-    $('.list-group').html('');
-    $("#searchName").val('');
-    sendIpcMsg('window-close','')
-})
+}
+
+$("#searchName").bind('input propertychange', function() {
+    triggerSearch();
+});
 
 function runCommend(index){
     var commend = $('[attr-index=' + index + ']').attr('attr-commend') || '';
     commend = commandList[index-1] || '';
+    commend.trim();
     if (commend.length > 1){
-        $('.list-group').html('');
-        $("#searchName").val('');
-        sendIpcMsg('exec', commend);
+        if (commend.indexOf('Exec-tab') == 0) {
+            var newCommend = $.trim(commend.replace('Exec-tab', ''));
+            //自动填充
+            $('.list-group').html('');
+            changeSize();
+            $("#searchName").val(newCommend);
+            triggerSearch();
+        } else {
+            $('.list-group').html('');
+            $("#searchName").val('');
+            sendIpcMsg('exec', commend);
+        }
     }
 }
 $("body").keyup(function(e){
     //关闭页面
     if (e.keyCode == 27){
-        $('.list-group').html('');
-        $("#searchName").val('');
-        sendIpcMsg('window-close','')
+        //首先清空，再退出
+        if ($("#searchName").val('') == '') {
+            $('.list-group').html('');
+            sendIpcMsg('window-close','')
+        } else {
+            $('.list-group').html('');
+            $("#searchName").val('');
+            changeSize();
+        }
     } else if(e.keyCode == 13){
         //回车
         runCommend(1);
