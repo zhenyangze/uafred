@@ -19,6 +19,10 @@ afred on ubuntu(use electron)
 
 主要功能
 ----
+## 功能列表
+* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
+* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
+* [天气](https://github.com/zhenyangze/uafred/blob/master/README.md#天气)
 ## 帮助
 ![帮助搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/help.png)
 ## 应用搜索
