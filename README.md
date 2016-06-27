@@ -23,6 +23,14 @@ afred on ubuntu(use electron)
 ![帮助搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/help.png)
 ## 应用搜索
 ![应用搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/app.png)
+## api搜索
+1. 首先搜索api 关键词
+
+ ![api搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/api.png)
+2. 选择对应的项目，进入详情页面
+
+ ![api详情](https://github.com/zhenyangze/uafred/raw/master/screenshot/w3c.png)
+
 ## 有道翻译
 ![有道翻译](https://github.com/zhenyangze/uafred/raw/master/screenshot/yd.png)
 ## 百度搜索
@@ -39,3 +47,5 @@ afred on ubuntu(use electron)
 ![执行shell](https://github.com/zhenyangze/uafred/raw/master/screenshot/shell.png)
 ## 数学计算
 ![数学计算](https://github.com/zhenyangze/uafred/raw/master/screenshot/calc.png)
+## 天气
+![天气](https://github.com/zhenyangze/uafred/raw/master/screenshot/weather.png)
