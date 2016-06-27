@@ -1,0 +1,11 @@
+{
+    "title": "uafred",
+    "width": 600,
+    "height": 47,
+    "icon": "./uafred.ico",
+    "debug": false,
+    "plugin": "./script",
+    "config": "config.json",
+    "category": {
+    }
+}
