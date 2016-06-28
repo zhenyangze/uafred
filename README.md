@@ -1,6 +1,6 @@
 # uafred
-afred on ubuntu(use electron)
-**ubuntu**上的**afred** 
+alfred on ubuntu(use electron)
+**ubuntu**上的**alfred** 
 
 如果你是开发者，点击查看**[如何制作插件](https://github.com/zhenyangze/uafred/blob/master/README_DEV.md)**
 
