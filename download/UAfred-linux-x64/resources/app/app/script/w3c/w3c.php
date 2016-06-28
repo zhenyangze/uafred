@@ -13,10 +13,11 @@ $fileContent = iconv("GBK", "UTF-8//IGNORE", $fileContent);
 $body = stristr($fileContent, '<div id="maincontent"');
 $body = str_ireplace(stristr($body, '<div id="sidebar'), '', $body);
 $css = '<link rel="stylesheet" type="text/css" href="../../script/w3c/css/c5.css" />';
+$js = '<script>var a=document.getElementsByTagName("a");for(i in a) {a[i].href="javascript:;"};</script>';
 $result = [
     "PageType" => "single",
     'Name' => '',
-    'Comment' => $css . $body,
+    'Comment' => $css . $body . $js,
     'Exec' => '',
     'Icon' => '../../script/api/w3c.png'
 ];
