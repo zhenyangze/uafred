@@ -22,18 +22,18 @@ fi
 for APP_PATH in ${APP_PATH_ARRAY[*]};do
     for i in $(grep -i $KEYWORD $APP_PATH/* | grep -E 'Name|Comment|Keywords' | awk -F':' '{print $1}' | uniq);do
         FILE_PATH=$i
-        Name=$(cat $FILE_PATH | grep 'Name=' | head -1 | sed -n 's/Name=//p') 
-        Name_ZH=$(cat $FILE_PATH | grep 'Name\[zh_CN\]=' | head -1 | sed -n 's/Name\[zh_CN\]=//p') 
+        Name=$(cat $FILE_PATH | grep '^Name=' | head -1 | sed -n 's/Name=//p') 
+        Name_ZH=$(cat $FILE_PATH | grep '^Name\[zh_CN\]=' | head -1 | sed -n 's/Name\[zh_CN\]=//p') 
         if [[ ! -z $Name_ZH ]];then
             Name=$Name_ZH
         fi
-        Comment=$(cat $FILE_PATH | grep 'Comment=' | head -1 | sed -n 's/Comment=//p') 
-        Comment_ZH=$(cat $FILE_PATH | grep 'Comment\[zh_CN\]=' | head -1 | sed -n 's/Comment\[zh_CN\]=//p') 
+        Comment=$(cat $FILE_PATH | grep '^Comment=' | head -1 | sed -n 's/Comment=//p') 
+        Comment_ZH=$(cat $FILE_PATH | grep '^Comment\[zh_CN\]=' | head -1 | sed -n 's/Comment\[zh_CN\]=//p') 
         if [[ ! -z $Comment_ZH ]];then
             Comment=$Comment_ZH
         fi
-        Exec=$(cat $FILE_PATH | grep 'Exec=' | head -1 | sed -n 's/Exec=//p' | cut -d ' ' -f 1) 
-        Icon=$(cat $FILE_PATH | grep 'Icon=' | head -1 | sed -n 's/Icon=//p') 
+        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p' | cut -d ' ' -f 1) 
+        Icon=$(cat $FILE_PATH | grep '^Icon=' | head -1 | sed -n 's/Icon=//p') 
         REAL_ICON=$(tree -fin /usr/share/icons/hicolor | grep '\/'$Icon | head -1 | awk '{print $1}')
         if [[ ! -f $REAL_ICON ]];then
             REAL_ICON=''

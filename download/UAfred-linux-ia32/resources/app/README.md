@@ -4,9 +4,11 @@ alfred on ubuntu(use electron)
 
 如果你是开发者，点击查看**[如何制作插件](https://github.com/zhenyangze/uafred/blob/master/README_DEV.md)**
 
+欢迎加群交流,qq群：`469014214`
+
 使用方法
 ----
-1. 进入　[下载地址](https://github.com/zhenyangze/uafred/tree/master/download)，选择自己的系统对应的版本下载．
+1. 进入　[下载地址](https://github.com/zhenyangze/uafred/releases)，选择自己的系统对应的版本下载．
 2. 创建快捷方式
 　右上角系统设置->键盘->快捷键->自定义
 3. 使用
