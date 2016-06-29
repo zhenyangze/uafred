@@ -11,6 +11,7 @@ alfred on ubuntu(use electron)
 1. 进入　[下载地址](https://github.com/zhenyangze/uafred/releases)，选择自己的系统对应的版本下载．
 2. 创建快捷方式
 　右上角系统设置->键盘->快捷键->自定义
+  ![快捷键](https://github.com/zhenyangze/uafred/raw/master/screenshot/short.png)
 3. 使用
   * 使用快捷键打开程序
   * 按一次`Esc`清空搜索内容，按两次`Esc`关闭程序
