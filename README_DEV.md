@@ -9,14 +9,14 @@
 1. 在`app/script/` 新建目录，目录名称为：`Demo`
 2. 在`Demo`目录中新建文件`config.json`,文件内容如下：
   ```javascript
-{
+  {
     "demo":{                        //搜索关键词
         "name":"demo",              //展示名称
         "icon":"./demo.png",        //图标，路径相对于当前Demo目录
         "comment":"demo comments" , //介绍 
         "path":"./demo.sh"          //可执行文件路径，相对于当前Demo目录，和第三步的文件名称对应
     }
-}
+  }
 ```
 
 3. 编写对应的`demo.sh`，保证文件执行的最终结果返回的格式如下即可。
@@ -33,10 +33,12 @@
 **注意事项**
 
 1. 在php文件中，如果返回多个json语句，请使用`\n`分割，如
+
   ```php
     echo json_encode(array) . "\n";
     echo json_encode(array) . "\n";
   ```
+  
   否则读取结果有问题．
 
 **扩展功能.自动填充**
