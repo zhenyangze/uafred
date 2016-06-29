@@ -10,7 +10,11 @@ case $1 in
         shift
         source $baseDir/exit.sh $*
         ;;
+    'clear')
+        shift
+        source $baseDir/clear.sh
+        ;;
     *)
-        echo '{"Name":"uafred [exit]", "Comment":"UAfred相关命令", "Exec":"", "Icon":"../../script/uafred/uafred.png"}'
+        echo '{"Name":"uafred [exit|clear]", "Comment":"UAfred相关命令", "Exec":"", "Icon":"../../script/uafred/uafred.png"}'
         ;;
 esac
