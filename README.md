@@ -8,7 +8,7 @@ alfred on ubuntu(use electron)
 
 使用方法
 ----
-1. 进入　[下载地址](https://github.com/zhenyangze/uafred/releases)，选择自己的系统对应的版本下载．
+1. 进入　[下载地址](https://github.com/zhenyangze/uafred/tree/master/download)，选择自己的系统对应的版本下载．
 2. 创建快捷方式
 　右上角系统设置->键盘->快捷键->自定义
   ![快捷键](https://github.com/zhenyangze/uafred/raw/master/screenshot/short.png)
