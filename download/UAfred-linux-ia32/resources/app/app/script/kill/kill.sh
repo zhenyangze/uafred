@@ -8,4 +8,4 @@ if [ -z $1 ];then
     exit
 fi
 
-echo -e '{"Name":"kill '$1'", "Comment":"结束进程", "Exec":"killall -i '$1'", "Icon":"../../script/kill/kill.png"}'
+echo -e '{"Name":"kill '$1'", "Comment":"结束进程", "Exec":"ps -ef | grep '$1' | grep -v grep | awk '\''{system(\"kill -9 \"$2)}'\''", "Icon":"../../script/kill/kill.png"}'

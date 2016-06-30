@@ -20,7 +20,8 @@ else
 fi
 
 for APP_PATH in ${APP_PATH_ARRAY[*]};do
-    for i in $(grep -i $KEYWORD $APP_PATH/* | grep -E 'Name|Comment|Keywords' | awk -F':' '{print $1}' | uniq);do
+    # for i in $(grep -i $KEYWORD $APP_PATH/* | grep -E 'Name|Comment|Keywords' | awk -F':' '{print $1}' | uniq);do
+    for i in $(grep -i $KEYWORD $APP_PATH/* | awk -F':'  '$2 ~ /Name|Keywords/ {print $1}' | uniq);do
         FILE_PATH=$i
         Name=$(cat $FILE_PATH | grep '^Name=' | head -1 | sed -n 's/Name=//p') 
         Name_ZH=$(cat $FILE_PATH | grep '^Name\[zh_CN\]=' | head -1 | sed -n 's/Name\[zh_CN\]=//p') 
