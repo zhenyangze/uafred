@@ -3,3 +3,4 @@ app/config.json
 download/UAfred-linux-x64/resources/app/app/config.json
 download/UAfred-linux-ia32/resources/app/app/config.json
 node_modules
+package.sh

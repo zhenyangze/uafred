@@ -6,6 +6,10 @@
     "debug": false,
     "plugin": "./script",
     "config": "config.json",
+    "position":{
+        "x":0,
+        "y":0
+    },
     "category": {
     }
 }

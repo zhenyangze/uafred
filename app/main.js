@@ -35,7 +35,10 @@ let keyword
 
 const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
     if (mainWindow) {
-        if (!mainWindow.isVisible()) mainWindow.show();
+        if (!mainWindow.isVisible()) {
+            mainWindow.show();
+            mainWindow.focus();
+        }
         mainWindow.setContentSize(config.width, config.height, true);
     }
 });
@@ -65,7 +68,9 @@ function createWindow () {
     })
 
     let bounds = mainWindow.getBounds();
-    mainWindow.setPosition(bounds.x, bounds.y-150, true);
+    let positionX = config.position.x || bounds.x;
+    let positionY = config.position.y || (bounds.y -150);
+    mainWindow.setPosition(positionX, positionY, true);
 
     // and load the index.html of the app.
     mainWindow.loadURL(`file://${__dirname}/www/template/index.html`)
@@ -86,6 +91,7 @@ function createWindow () {
         window_close(); 
     })
     mainWindow.show();
+    mainWindow.focus();
 }
 
 // This method will be called when Electron has finished
