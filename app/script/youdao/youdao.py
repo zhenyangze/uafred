@@ -3,6 +3,7 @@
 
 # http://fanyi.youdao.com/openapi.do?keyfrom=taohaoge&key=527038574&type=data&doctype=json&version=1.1&q=
 
+import urllib
 import urllib2
 import json
 import sys
@@ -11,7 +12,8 @@ sys.setdefaultencoding('utf-8')
 
 # text command icon subtext
 
-keyword = '+'.join(sys.argv[1:])
+keyword = ' '.join(sys.argv[1:])
+keyword = urllib.quote(keyword)
 if len(keyword) == 0:
     exit()
 
