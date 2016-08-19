@@ -1,2 +1,4 @@
 #!/bin/bash
-echo '{"Name":"'$1'","Icon":"../../script/baidu/baidu-icon.png","Exec":"xdg-open http://www.baidu.com/s?wd='$1'","Comment":"百度搜索 '$1'"}'
+url="http://www.baidu.com/s?wd=$*"
+url=${url// /%20}
+echo '{"Name":"'$*'","Icon":"../../script/baidu/baidu-icon.png","Exec":"xdg-open '$url'","Comment":"百度搜索 '$*'"}'
