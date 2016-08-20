@@ -31,6 +31,7 @@ alfred on ubuntu(use electron)
 * [执行shell](https://github.com/zhenyangze/uafred#执行shell)
 * [数学计算](https://github.com/zhenyangze/uafred#数学计算)
 * [天气](https://github.com/zhenyangze/uafred#天气)
+* 豆瓣电影
 
 功能截图
 ----
@@ -64,3 +65,5 @@ alfred on ubuntu(use electron)
 ![数学计算](https://github.com/zhenyangze/uafred/raw/master/screenshot/calc.png)
 ## 天气
 ![天气](https://github.com/zhenyangze/uafred/raw/master/screenshot/weather.png)
+## 豆瓣电影
+![豆瓣电影](https://github.com/zhenyangze/uafred/raw/master/screenshot/movie.png)

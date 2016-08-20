@@ -1,0 +1,8 @@
+{
+    "movie":{
+        "name":"豆瓣电影",
+        "icon":"./douban_movie.png",
+        "comment":"douban movie",
+        "path":"./douban_movie.py"
+    }
+}
