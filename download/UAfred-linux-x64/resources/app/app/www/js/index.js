@@ -33,7 +33,8 @@ function search($keyWordArr){
     commandList = [];
     $searchArr = {
         'category': $keyWordArr.shift(),
-        'args': $keyWordArr
+        'args': $keyWordArr,
+        'startTime': startTime = new Date().getTime()
     };              
     getIpcMsg('result', function(event, arg){
         //存在多个json组合的情况
