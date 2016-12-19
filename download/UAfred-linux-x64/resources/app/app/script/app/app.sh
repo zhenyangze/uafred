@@ -33,7 +33,7 @@ for APP_PATH in ${APP_PATH_ARRAY[*]};do
         if [[ ! -z $Comment_ZH ]];then
             Comment=$Comment_ZH
         fi
-        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p' | cut -d ' ' -f 1) 
+        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p' | awk '{gsub(/\%\w+/, "", $0);print $0}') 
         Icon=$(cat $FILE_PATH | grep '^Icon=' | head -1 | sed -n 's/Icon=//p') 
         REAL_ICON=$(tree -fin /usr/share/icons/hicolor | grep '\/'$Icon | head -1 | awk '{print $1}')
         if [[ ! -f $REAL_ICON ]];then

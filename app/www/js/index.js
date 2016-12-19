@@ -34,7 +34,7 @@ function search($keyWordArr){
     $searchArr = {
         'category': $keyWordArr.shift(),
         'args': $keyWordArr,
-        'startTime': startTime = new Date().getTime()
+        'startTime': (new Date().getTime() +  Math.random())
     };              
     getIpcMsg('result', function(event, arg){
         //存在多个json组合的情况
