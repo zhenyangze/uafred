@@ -151,17 +151,26 @@ ipcMain.on('search', function(event, arg){
                 arg.args.unshift(category);
             }
         }
-        let result = cp.spawn(ExecShell, arg.args);
-        result.stdout.on('data', function(data){
-            if (arg == keyword){
-                event.sender.send('result', data); 
+        //let result = cp.spawn(ExecShell, arg.args);
+        cp.exec([ExecShell, arg.args.join(' ')].join(' '), function(err, stdout, stderr){
+            if (err) {
+                console.log(err)
+            } else {
+                let jsonArr = stdout.toString().split("\n");
+                let dataObj = {};
+                for(let i = 0; i<jsonArr.length; i++){
+                    try {
+                        dataObj = JSON.parse(jsonArr[i]); 
+                        dataObj.startTime = arg.startTime;
+                        event.sender.send('result', JSON.stringify(dataObj)); 
+                    } catch(e){
+                        //提示错误
+                    }           
+                }
+                event.sender.send('result-over', null);
             }
         });
-        result.stdout.on('end', function(data){
-            if (arg == keyword){
-                event.sender.send('result-over', data);
-            } 
-        });
+        return;
     } catch(e){
 
     }
