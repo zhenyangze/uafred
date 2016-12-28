@@ -14,7 +14,7 @@ NUM=0
 tmpFile=$(ls /tmp/uafred_${KEYWORD}.* 2>/dev/null | head -1)
 if [[ ! -z $tmpFile ]];then
     #cat $tmpFile
-    echo 
+    echo
     #exit
 else
     tmpFile=$(mktemp /tmp/uafred_${KEYWORD}.XXXX)
@@ -24,7 +24,6 @@ for APP_PATH in ${APP_PATH_ARRAY[*]};do
     # for i in $(grep -i $KEYWORD $APP_PATH/* | grep -E 'Name|Comment|Keywords' | awk -F':' '{print $1}' | uniq);do
     for i in $(grep -i $KEYWORD $APP_PATH/* | awk -F':'  '$2 ~ /Name|Keywords/ {print $1}' | uniq);do
         FILE_PATH=$i
-        echo $i
         Name=$(cat $FILE_PATH | grep '^Name=' | head -1 | sed -n 's/Name=//p') 
         Name_ZH=$(cat $FILE_PATH | grep '^Name\[zh_CN\]=' | head -1 | sed -n 's/Name\[zh_CN\]=//p') 
         if [[ ! -z $Name_ZH ]];then
@@ -35,16 +34,19 @@ for APP_PATH in ${APP_PATH_ARRAY[*]};do
         if [[ ! -z $Comment_ZH ]];then
             Comment=$Comment_ZH
         fi
-        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//;s/"//gp' | awk '{gsub(/\%\w+/, "", $0);print $0}') 
+        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p;s/"//gp' | tail -1 | awk '{gsub(/\%\w+/, "", $0);print $0}') 
         Icon=$(cat $FILE_PATH | grep '^Icon=' | head -1 | sed -n 's/Icon=//p') 
         REAL_ICON=$(tree -fin /usr/share/icons/hicolor | grep '\/'$Icon | head -1 | awk '{print $1}')
         if [[ ! -f $REAL_ICON ]];then
             REAL_ICON=''
         fi
-        RESULT='{"Key":"'$KEYWORD'","Name": "'$Name'","Comment":"'$Comment'","Exec":"'$Exec'","Icon":"'$REAL_ICON'"}'
-        echo $RESULT
-        echo $RESULT >> $tmpFile
-        NUM=`expr $NUM + 1`
+        Exec=$(echo $Exec | grep -o "[^ ]\+\( \+[^ ]\+\)*")
+        if [ -n "$Exec" ]; then 
+            RESULT='{"Key":"'$KEYWORD'","Name": "'$Name'","Comment":"'$Comment'","Exec":"'$Exec'","Icon":"'$REAL_ICON'"}'
+            echo $RESULT
+            echo $RESULT >> $tmpFile
+            NUM=`expr $NUM + 1`
+        fi
         if [[ $NUM -gt 50 ]];then
             exit
         fi
