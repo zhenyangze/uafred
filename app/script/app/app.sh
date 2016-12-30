@@ -13,9 +13,8 @@ NUM=0
 
 tmpFile=$(ls /tmp/uafred_${KEYWORD}.* 2>/dev/null | head -1)
 if [[ ! -z $tmpFile ]];then
-    #cat $tmpFile
-    echo
-    #exit
+    cat $tmpFile
+    exit
 else
     tmpFile=$(mktemp /tmp/uafred_${KEYWORD}.XXXX)
 fi
