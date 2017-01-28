@@ -1,5 +1,6 @@
 md5List = [];
 commandList = [];
+startTime = '';
 
 function sendIpcMsg(channel, args){
     try {
@@ -31,9 +32,11 @@ function search($keyWordArr){
     $searchArr = {};
     md5List = [];
     commandList = [];
+    startTime = new Date().getTime() +  Math.random();
     $searchArr = {
         'category': $keyWordArr.shift(),
-        'args': $keyWordArr
+        'args': $keyWordArr,
+        'startTime': startTime
     };              
     getIpcMsg('result', function(event, arg){
         //存在多个json组合的情况
@@ -43,7 +46,9 @@ function search($keyWordArr){
         for(let i = 0; i<jsonArr.length; i++){
             try {
                 dataObj = $.parseJSON(jsonArr[i]); 
-                showResult(jsonArr[i], dataObj);
+                if (dataObj.startTime == startTime) {
+                    showResult(jsonArr[i], dataObj);
+                }
             } catch(e){
                 //提示错误
             }           

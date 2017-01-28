@@ -3,7 +3,7 @@
 # Author: zhenyangze
 # mail: zhenyangze@gmail.com
 
-APP_PATH_ARRAY=('/usr/share/applications' $HOME'/.local/share/applications')
+APP_PATH_ARRAY=('/usr/share/applications' $HOME'/.local/share/applications' $HOME'/.gnome/apps')
 
 if [[ -z $1 ]];then
     exit
@@ -33,16 +33,19 @@ for APP_PATH in ${APP_PATH_ARRAY[*]};do
         if [[ ! -z $Comment_ZH ]];then
             Comment=$Comment_ZH
         fi
-        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p' | cut -d ' ' -f 1) 
+        Exec=$(cat $FILE_PATH | grep '^Exec=' | head -1 | sed -n 's/Exec=//p;s/"//gp' | tail -1 | awk '{gsub(/\%\w+/, "", $0);print $0}') 
         Icon=$(cat $FILE_PATH | grep '^Icon=' | head -1 | sed -n 's/Icon=//p') 
         REAL_ICON=$(tree -fin /usr/share/icons/hicolor | grep '\/'$Icon | head -1 | awk '{print $1}')
         if [[ ! -f $REAL_ICON ]];then
             REAL_ICON=''
         fi
-        RESULT='{"Key":"'$KEYWORD'","Name": "'$Name'","Comment":"'$Comment'","Exec":"'$Exec'","Icon":"'$REAL_ICON'"}'
-        echo $RESULT
-        echo $RESULT >> $tmpFile
-        NUM=`expr $NUM + 1`
+        Exec=$(echo $Exec | grep -o "[^ ]\+\( \+[^ ]\+\)*")
+        if [ -n "$Exec" ]; then 
+            RESULT='{"Key":"'$KEYWORD'","Name": "'$Name'","Comment":"'$Comment'","Exec":"'$Exec'","Icon":"'$REAL_ICON'"}'
+            echo $RESULT
+            echo $RESULT >> $tmpFile
+            NUM=`expr $NUM + 1`
+        fi
         if [[ $NUM -gt 50 ]];then
             exit
         fi
