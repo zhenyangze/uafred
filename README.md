@@ -1,8 +1,9 @@
 # uafred
 alfred on ubuntu(use electron)
-**ubuntu**上的**alfred** 
 
-如果你是开发者，点击查看**[如何制作插件](https://github.com/zhenyangze/uafred/blob/master/README_DEV.md)**
+**ubuntu** 上的 **alfred** 
+
+如果你是开发者，点击查看 **[如何制作插件](https://github.com/zhenyangze/uafred/blob/master/README_DEV.md)**
 
 使用方法
 ----
@@ -10,7 +11,12 @@ alfred on ubuntu(use electron)
 2. 创建快捷方式
 　右上角系统设置->键盘->快捷键->自定义
   ![快捷键](https://github.com/zhenyangze/uafred/raw/master/screenshot/short.png)
-3. 使用
+3. 依赖
+  帮助、API等模块依赖于系统php环境，需要自行安装，否则可能会报错
+
+    `sudo apt-get install php7.1-cli`
+
+4. 使用
   * 使用快捷键打开程序
   * 按一次`Esc`清空搜索内容，按两次`Esc`关闭程序
   * `Alt+数字`执行对应的方法（有些会失效，比如有道翻译，因为没有对Alt做处理）
@@ -31,7 +37,7 @@ alfred on ubuntu(use electron)
 * [执行shell](https://github.com/zhenyangze/uafred#执行shell)
 * [数学计算](https://github.com/zhenyangze/uafred#数学计算)
 * [天气](https://github.com/zhenyangze/uafred#天气)
-* 豆瓣电影
+* [豆瓣电影](https://github.com/zhenyangze/uafred#豆瓣电影)
 
 功能截图
 ----
@@ -43,6 +49,7 @@ alfred on ubuntu(use electron)
 1. 首先搜索api 关键词
 
  ![api搜索](https://github.com/zhenyangze/uafred/raw/master/screenshot/api.png)
+ 
 2. 选择对应的项目，进入详情页面
 
  ![api详情](https://github.com/zhenyangze/uafred/raw/master/screenshot/w3c.png)
