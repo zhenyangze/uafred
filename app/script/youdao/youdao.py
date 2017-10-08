@@ -32,11 +32,18 @@ get_page = json.loads(get_page_raw)
 if get_page['errorCode'] != 0:
     exit()
 
-
-if re.search('us-phonetic', get_page_raw):
-	print '{"Name":"' + ' '.join(get_page['translation']).strip() + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + ' US: [' + get_page['basic']['us-phonetic'] + ']' + ' UK: [' + get_page['basic']['uk-phonetic'] + ']' '"}'
-else:	
-	print '{"Name":"' + ' '.join(get_page['translation']).strip() + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + '"}'
+if re.search('explains', get_page_raw):
+    if re.search('us-phonetic', get_page_raw):
+        for explanation in get_page['basic']['explains']:
+            print '{"Name":"' + explanation + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + ' US: [' + get_page['basic']['us-phonetic'] + ']' + ' UK: [' + get_page['basic']['uk-phonetic'] + ']' '"}'
+    else:
+        for explanation in get_page['basic']['explains']:
+	    print '{"Name":"' + explanation + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + '"}'
+elif re.search('translation', get_page_raw):	    
+    if re.search('us-phonetic', get_page_raw):
+        print '{"Name":"' + ' '.join(get_page['translation']).strip() + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + ' US: [' + get_page['basic']['us-phonetic'] + ']' + ' UK: [' + get_page['basic']['uk-phonetic'] + ']' '"}'
+    else:	
+	    print '{"Name":"' + ' '.join(get_page['translation']).strip() + '","Icon":"../../script/youdao/youdao.png","Exec":"","Comment":"' + get_page['query'] + '"}'
 
 
 for i in get_page['web']:
